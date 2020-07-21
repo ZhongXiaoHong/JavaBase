@@ -27,6 +27,8 @@ public class Response<T> {
     }
 
     public static void main(String[] args) {
+
+
         Gson gson = new Gson();
         Response<Data> response = new Response<>(200, "OK", new Data(100, "zxh"));
         String json = gson.toJson(response);
@@ -39,9 +41,15 @@ public class Response<T> {
 
         //com.silang.javalib.TypeRef<T>
        // Type type = new TyperRefSon<Response<Data>>(){}.getType();
-        Type type = new TyperRefSon2().getType();
+      //  Type type = new TyperRefSon2().getType();
+
+        Type type = new TypeToken<Response<Data>>(){}.getType();
         Response<Data> response2 = gson.fromJson(json, type);
         System.out.println(response2.data);
+
+
+        gson.getClass().getSuperclass();
+        gson.getClass().getGenericSuperclass();
 
     }
 }
