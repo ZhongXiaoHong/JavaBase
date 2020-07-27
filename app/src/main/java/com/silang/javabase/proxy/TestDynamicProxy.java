@@ -6,7 +6,7 @@ public class TestDynamicProxy {
 
 
     public static void main(String[] args) {
-        Proxy.newProxyInstance()
+        //Proxy.newProxyInstance()
 
     }
 
